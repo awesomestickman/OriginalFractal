@@ -1,7 +1,8 @@
+ int uuu  = 300;
 public void setup(){
 
   size(800,800);
-  
+ 
 
 }
 public void draw(){
@@ -11,22 +12,22 @@ public void draw(){
     fractal(40,40,150);
 }
 
-public void fractal(int x,int y,int swag){
-if(swag<=11){
+public void fractal(float x,float y,float swag){
+if(swag<11){
 	//fill(20,40,9);
 	//System.out.println(x);
 	//System.out.println(y);
-	ellipse(x, y, swag, swag);
+	ellipse(x, y, swag*(x/uuu), swag*(y/uuu));
 
 
 }
 else{
 
-int atomizer= (int)(Math.random()*20);
+//int atomizer= (int)(Math.random()*20);
 //System.out.println(atomizer);
 	fractal(x,y,swag/2);
-	fractal(x+swag/2,y,swag-10);
-	fractal(x,y+swag/2,swag-10);
+	fractal(x+swag*1.5,y,swag-10);
+	fractal(x,y+swag*1.5,swag-10);
 }
 
 
